@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoTech Computers (Pvt) Ltd | Corporate IT Solutions</title>
+    <meta name="description" content="InfoTech Computers provides top-tier corporate IT support, networking, server maintenance, and hardware solutions.">
+    <!-- Tailwind CSS (CDN since No Node.js) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0f172a', /* Dark slate for professional look */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50 selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <img src="assets/logo.png" alt="InfoTech Computers Logo" class="h-16 w-auto object-contain">
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">About Us</a>
+                    <a href="services.html" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Services</a>
+                    <a href="clients.html" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Clients</a>
+                    <a href="contact.html" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-800 text-white rounded-lg font-medium transition-all shadow-md shadow-brand-600/20 hover:shadow-lg hover:-translate-y-0.5">
+                        Get Support
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-600 focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50 rounded-md">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50 rounded-md">About Us</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50 rounded-md">Services</a>
+                <a href="clients.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50 rounded-md">Clients</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-brand-600 hover:text-brand-800 hover:bg-brand-50 rounded-md">Get Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Subpage Banner -->
+    <section class="pt-32 pb-16 bg-brand-900 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Contact Us</h1>
+            <p class="mt-4 text-brand-100 text-lg">InfoTech Computers (Private) Limited</p>
+        </div>
+    </section>
+
+                        <!-- Support CTA -->
+    <section class="py-16 bg-brand-600 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="text-white md:w-2/3">
+                <h3 class="text-2xl md:text-3xl font-bold mb-2">Experiencing technical difficulties?</h3>
+                <p class="text-brand-100 text-lg">Our immediate response team is ready to assist you right now.</p>
+            </div>
+            <div class="flex gap-4 w-full md:w-auto">
+                <a href="tel:+94112345678" class="flex-1 md:flex-none px-8 py-4 bg-white text-brand-600 rounded-xl font-bold text-center hover:bg-gray-50 transition-colors shadow-lg shadow-black/10 flex items-center justify-center gap-3">
+                    <i class="fas fa-phone-alt"></i> Call Support
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Area -->
+    <footer id="contact" class="bg-gray-900 border-t-4 border-brand-500 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand Info -->
+                <div class="col-span-1">
+                    <a href="index.html" class="inline-block mb-6">
+                        <img src="assets/logo.png" alt="InfoTech Computers Logo" class="h-16 w-auto bg-white p-2 rounded-xl border border-gray-700 shadow-md">
+                    </a>
+                    <p class="text-gray-400 mb-6 leading-relaxed relative z-10">
+                        The trusted technology partner for modern corporations. Securing and optimizing your IT infrastructure.
+                    </p>
+                    <div class="text-sm text-gray-400 space-y-3 mb-6 relative z-10">
+                        <p class="font-bold text-white mb-2 text-base">Head Office</p>
+                        <p class="flex items-start gap-2"><i class="fas fa-map-marker-alt text-brand-500 mt-1"></i> <span>No. 801, 4th Floor, Sausiri Shopping Complex, High Level Road, Nugegoda.</span></p>
+                        <p class="flex items-center gap-2"><i class="fas fa-phone text-brand-500"></i> +94 11 219 9446</p>
+                    </div>
+                </div>
+
+                <!-- Key Contacts -->
+                <div class="col-span-1 lg:col-span-2 relative z-10">
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Company Directory</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Sales -->
+                        <div class="bg-gray-800/80 p-5 rounded-xl border border-gray-700/50 hover:border-brand-500/50 transition-colors shadow-lg">
+                            <h5 class="text-brand-400 font-bold mb-1">Sales Inquiries</h5>
+                            <p class="text-white font-medium text-sm">Prageesha Fonseka</p>
+                            <p class="text-gray-400 text-xs mb-3 italic">(Executive - Customer Relations)</p>
+                            <a href="mailto:sales@itclk.com" class="block text-gray-300 hover:text-white text-sm mb-1"><i class="fas fa-envelope text-brand-500 w-5"></i> sales@itclk.com</a>
+                            <a href="tel:+94760954599" class="block text-gray-300 hover:text-white text-sm"><i class="fas fa-mobile-alt text-brand-500 w-5"></i> +94 76 095 4599</a>
+                        </div>
+                        <!-- Operations -->
+                        <div class="bg-gray-800/80 p-5 rounded-xl border border-gray-700/50 hover:border-brand-500/50 transition-colors shadow-lg">
+                            <h5 class="text-brand-400 font-bold mb-1">Operational Inquiries</h5>
+                            <p class="text-white font-medium text-sm">Lithira Warnakulasooriya</p>
+                            <p class="text-gray-400 text-xs mb-3 italic">(Manager - Operations)</p>
+                            <a href="mailto:operations@itclk.com" class="block text-gray-300 hover:text-white text-sm mb-1"><i class="fas fa-envelope text-brand-500 w-5"></i> operations@itclk.com</a>
+                            <a href="tel:+94760954597" class="block text-gray-300 hover:text-white text-sm"><i class="fas fa-mobile-alt text-brand-500 w-5"></i> +94 76 095 4597</a>
+                        </div>
+                        <!-- Technical -->
+                        <div class="bg-gray-800/80 p-5 rounded-xl border border-gray-700/50 hover:border-brand-500/50 transition-colors shadow-lg">
+                            <h5 class="text-brand-400 font-bold mb-1">Technical Inquiries</h5>
+                            <p class="text-white font-medium text-sm">Yenuka Madhumalka</p>
+                            <p class="text-gray-400 text-xs mb-3 italic">(Lead - Projects)</p>
+                            <a href="mailto:support@itclk.com" class="block text-gray-300 hover:text-white text-sm mb-1"><i class="fas fa-envelope text-brand-500 w-5"></i> support@itclk.com</a>
+                            <a href="tel:+94760954595" class="block text-gray-300 hover:text-white text-sm"><i class="fas fa-mobile-alt text-brand-500 w-5"></i> +94 76 095 4595</a>
+                        </div>
+                        <!-- Executive -->
+                        <div class="bg-gray-800/80 p-5 rounded-xl border border-gray-700/50 hover:border-brand-500/50 transition-colors shadow-lg">
+                            <h5 class="text-brand-400 font-bold mb-1">Executive Leadership</h5>
+                            <p class="text-white font-medium text-sm">Sachith Kudavidanage</p>
+                            <p class="text-gray-400 text-xs mb-3 italic">(Director / CEO)</p>
+                            <a href="mailto:info@itclk.com" class="block text-gray-300 hover:text-white text-sm mb-1"><i class="fas fa-envelope text-brand-500 w-5"></i> info@itclk.com</a>
+                            <a href="tel:+94777909100" class="block text-gray-300 hover:text-white text-sm"><i class="fas fa-mobile-alt text-brand-500 w-5"></i> +94 777 909 100</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connect / Socials -->
+                <div class="col-span-1 relative z-10">
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Services</h4>
+                    <ul class="space-y-3 mb-8">
+                        <li><a href="#" class="text-gray-400 hover:text-brand-400 transition-colors text-sm inline-flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> IT Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-400 transition-colors text-sm inline-flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Networking Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-400 transition-colors text-sm inline-flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Server Maintenance</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-400 transition-colors text-sm inline-flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> CCTV Installations</a></li>
+                    </ul>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-600 hover:text-white transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-600 hover:text-white transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-600 hover:text-white transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex justify-center items-center">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2026 InfoTech Computers (Pvt) Ltd. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
