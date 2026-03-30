@@ -3,246 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfoTech Computers (Pvt) Ltd | Corporate IT Solutions</title>
-    <meta name="description" content="InfoTech Computers provides top-tier corporate IT support, networking, server maintenance, and hardware solutions.">
-    <!-- Tailwind CSS (CDN since No Node.js) -->
+    <title>InfoTech | Business & IT Support Services Provider</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            800: '#075985',
-                            900: '#0f172a', /* Dark slate for professional look */
-                        }
+                        brand: { 50: '#f0f9ff', 100: '#e0f2fe', 500: '#0ea5e9', 600: '#0284c7', 800: '#075985', 900: '#0f172a' }
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
                 }
             }
         }
     </script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        .animate-marquee { animation: marquee 35s linear infinite; }
+        .animate-marquee-slow { animation: marquee 45s linear infinite reverse; }
+        @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+            .animate-marquee-slower { animation: marquee 120s linear infinite; }
+            .animate-carousel { animation: carousel 60s linear infinite; }
+        @keyframes carousel { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+    </style>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-gray-50 selection:bg-brand-500 selection:text-white">
+<body class="font-sans antialiased text-gray-800 bg-gray-50 flex flex-col min-h-screen">
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
-                    <img src="assets/logo.png" alt="InfoTech Computers Logo" class="h-16 w-auto object-contain">
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">About Us</a>
-                    <a href="services.html" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Services</a>
-                    <a href="clients.html" class="text-gray-600 hover:text-brand-600 font-medium transition-colors">Clients</a>
-                    <a href="contact.html" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-800 text-white rounded-lg font-medium transition-all shadow-md shadow-brand-600/20 hover:shadow-lg hover:-translate-y-0.5">
-                        Get Support
-                    </a>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-600 focus:outline-none p-2">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50 rounded-md">Home</a>
-                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50 rounded-md">About Us</a>
-                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50 rounded-md">Services</a>
-                <a href="clients.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-600 hover:bg-gray-50 rounded-md">Clients</a>
-                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-brand-600 hover:text-brand-800 hover:bg-brand-50 rounded-md">Get Support</a>
+    <!-- Header -->
+    <nav class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="assets/logo.png" alt="InfoTech Logo" class="h-14 w-auto object-contain">
+            </a>
+            <div class="hidden md:flex items-center space-x-8 font-medium">
+                <a href="#home" class="text-gray-900 hover:text-brand-600 transition-colors">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-brand-600 transition-colors">About</a>
+                <a href="#services" class="text-gray-600 hover:text-brand-600 transition-colors">Services</a>
+                <a href="#clients" class="text-gray-600 hover:text-brand-600 transition-colors">Clients</a>
+                <a href="#contact" class="px-6 py-2.5 bg-brand-600 hover:bg-brand-900 text-white rounded-full transition-all shadow-md hover:shadow-lg">Contact Us</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-900">
-        <!-- Abstract Background Elements -->
-        <div class="absolute inset-0 overflow-hidden mix-blend-overlay opacity-20">
-            <div class="absolute -top-[30%] -right-[10%] w-[70%] h-[70%] rounded-full bg-gradient-to-b from-brand-500 to-transparent blur-3xl"></div>
-            <div class="absolute -bottom-[20%] -left-[10%] w-[60%] h-[60%] rounded-full bg-gradient-to-t from-blue-400 to-transparent blur-3xl"></div>
-            <!-- Tech Grid Pattern -->
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTU5IDBoMXY2MGgtMXpNMCA1OWg2MHYxSDB6IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==')]"></div>
+    <!-- Hero -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-brand-900 flex items-center min-h-[90vh]">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80" alt="Tech Background" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-900 via-brand-900/95 to-transparent"></div>
         </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-4xl mx-auto hero-content">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-800/50 border border-brand-500/30 text-brand-100 text-sm font-medium mb-8 backdrop-blur-sm">
-                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                    24/7 Corporate IT Support Available
-                </div>
-                <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight mb-8 leading-tight">
-                    Empowering Your Business Through <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-100 to-brand-500">Robust IT Solutions</span>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-3xl">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-brand-500/20 text-brand-100 font-semibold mb-6 border border-brand-500/30">#1 Enterprise IT Solutions</span>
+                <h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-8 tracking-tight">
+                    Business & IT Support <span class="text-brand-500">Services Provider</span>
                 </h1>
-                <p class="mt-4 text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                    InfoTech Computers delivers enterprise-grade IT infrastructure, proactive maintenance, and dedicated support to keep your operations running seamlessly.
+                <p class="text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
+                    We help businesses grow with digital solutions, custom software, and highly reliable IT infrastructure tailored for modern enterprises.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#services" class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-xl font-semibold transition-all shadow-lg shadow-brand-600/30 hover:shadow-brand-500/50 hover:-translate-y-1 flex items-center justify-center gap-2">
-                        Explore Services <i class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#services" class="px-8 py-4 bg-brand-500 hover:bg-brand-600 text-white rounded-full font-bold transition-all shadow-lg flex items-center gap-2 group">
+                        Get Started <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </a>
-                    <a href="#contact" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-xl font-semibold transition-all backdrop-blur-sm flex items-center justify-center gap-2">
-                        Request Consultation
+                    <a href="#contact" class="px-8 py-4 border-2 border-white hover:bg-white hover:text-brand-900 text-white rounded-full font-bold transition-all">
+                        Contact Us
                     </a>
                 </div>
             </div>
         </div>
-        
-        <!-- Shape Divider -->
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
-            <svg class="relative block w-full h-[60px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-gray-50"></path>
-            </svg>
-        </div>
     </section>
 
-    <!-- Why InfoTech Section (About) -->
-    <section id="about" class="py-24 bg-white relative overflow-hidden">
-        <!-- Background Elements -->
-        <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-brand-50 rounded-bl-[150px] -z-10 opacity-60"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-50 rounded-tr-[100px] -z-10 opacity-60"></div>
-        
+    <!-- About -->
+    <section id="about" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-4xl mx-auto mb-20">
-                <h2 class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-3">About Us</h2>
-                <h3 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">Why InfoTech?</h3>
-                <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                    InfoTech Computers (Private) Limited is recognized as a reliable and trusted IT partner for organizations that require consistent performance, responsive support, and long-term value from their technology investments.
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-16 items-start">
-                <!-- Image Side -->
-                <div class="relative lg:sticky top-28">
-                    <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl group flex items-center justify-center bg-gray-100 border-4 border-white">
-                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Professional Tech Team" class="w-full h-[650px] object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <!-- Decorative overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/20 to-transparent"></div>
-                        <div class="absolute bottom-10 left-10 right-10">
-                            <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl flex items-center gap-4 text-white">
-                                <div class="bg-brand-500 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-brand-500/30">
-                                    <i class="fas fa-handshake text-2xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg">Trusted Infrastructure Partner</h4>
-                                    <p class="text-sm text-gray-200">Engineering success through technology</p>
-                                </div>
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-3">About InfoTech</h2>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-6 leading-tight">Driving Innovation & Quality in Enterprise IT</h3>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        InfoTech Computers (Pvt) Ltd is a leading technology partner dedicated to empowering modern businesses. We combine industry-leading expertise with a commitment to quality, innovation, and unwavering reliability to secure and optimize your IT operations.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-xl shrink-0"><i class="fas fa-lightbulb"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Creative Ideas</h4>
+                                <p class="text-sm text-gray-500">Innovative approaches to technical challenges.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-xl shrink-0"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">High Quality</h4>
+                                <p class="text-sm text-gray-500">Premium hardware and software solutions.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-xl shrink-0"><i class="fas fa-rocket"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Fast Delivery</h4>
+                                <p class="text-sm text-gray-500">Rapid deployment and support response.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-xl shrink-0"><i class="fas fa-hand-holding-dollar"></i></div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Value for Money</h4>
+                                <p class="text-sm text-gray-500">Cost-effective strategies that scale.</p>
                             </div>
                         </div>
                     </div>
-                    <!-- Decorative back block -->
-                    <div class="absolute -top-6 -right-6 w-full h-full border-2 border-brand-200 border-dashed rounded-3xl -z-10"></div>
                 </div>
-
-                <!-- Content Side -->
-                <div class="space-y-6">
-                    <!-- Point 1 -->
-                    <div class="bg-white p-6 rounded-2xl shadow-lg shadow-gray-200/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group">
-                        <div class="flex gap-5">
-                            <div class="w-14 h-14 bg-brand-50 rounded-xl text-brand-600 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
-                                <i class="fas fa-medal text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">Proven Reliability</h4>
-                                <p class="text-gray-600 leading-relaxed text-sm">A strong track record of supporting large and reputable organizations across multiple industries.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Point 2 -->
-                    <div class="bg-white p-6 rounded-2xl shadow-lg shadow-gray-200/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group">
-                        <div class="flex gap-5">
-                            <div class="w-14 h-14 bg-brand-50 rounded-xl text-brand-600 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
-                                <i class="fas fa-layer-group text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">Comprehensive IT Solutions</h4>
-                                <p class="text-gray-600 leading-relaxed text-sm">End-to-end technology solutions specifically tailored to meet unique business needs and ensure growth.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Point 3 -->
-                    <div class="bg-white p-6 rounded-2xl shadow-lg shadow-gray-200/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group">
-                        <div class="flex gap-5">
-                            <div class="w-14 h-14 bg-brand-50 rounded-xl text-brand-600 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
-                                <i class="fas fa-rotate-solid text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">Backup & Continuity Assurance</h4>
-                                <p class="text-gray-600 leading-relaxed text-sm">Provision of backup (replacement) equipment for extended maintenance or repair periods to ensure uninterrupted operations.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Point 4 -->
-                    <div class="bg-white p-6 rounded-2xl shadow-lg shadow-gray-200/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group">
-                        <div class="flex gap-5">
-                            <div class="w-14 h-14 bg-brand-50 rounded-xl text-brand-600 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
-                                <i class="fas fa-handshake-angle text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">Flexible Support Models</h4>
-                                <p class="text-gray-600 leading-relaxed text-sm">On-site and remote technical support exactly tailored to customer requirements and service-level expectations.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Point 5 -->
-                    <div class="bg-white p-6 rounded-2xl shadow-lg shadow-gray-200/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group">
-                        <div class="flex gap-5">
-                            <div class="w-14 h-14 bg-brand-50 rounded-xl text-brand-600 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
-                                <i class="fas fa-users-gear text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">Experienced Technical Team</h4>
-                                <p class="text-gray-600 leading-relaxed text-sm">Highly skilled professionals equipped with extensive experience seamlessly navigating enterprise IT environments.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Point 6 -->
-                    <div class="bg-white p-6 rounded-2xl shadow-lg shadow-gray-200/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group">
-                        <div class="flex gap-5">
-                            <div class="w-14 h-14 bg-brand-50 rounded-xl text-brand-600 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-300">
-                                <i class="fas fa-bullseye text-2xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">Customer-Centric Approach</h4>
-                                <p class="text-gray-600 leading-relaxed text-sm">Solutions designed directly around your core business objectives, not strictly just technical requirements.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="lg:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="About InfoTech" class="rounded-2xl shadow-2xl relative z-10 hover:-translate-y-2 transition-transform duration-500">
+                    <div class="absolute -bottom-8 -left-8 w-64 h-64 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+        <!-- Services Section -->
     <section id="services" class="py-24 bg-gray-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -264,7 +144,7 @@
                     <div class="p-8 flex-1 flex flex-col">
                         <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-600 transition-colors">IT Infrastructure Design & Management</h4>
                         <p class="text-gray-600 text-sm leading-relaxed mb-6">Design, implementation, and ongoing management of reliable IT infrastructure environments tailored to business needs.</p>
-                        <a href="#" class="mt-auto inline-flex items-center text-brand-600 font-medium hover:text-brand-800 transition-colors">
+                        <a href="#contact" class="mt-auto inline-flex items-center text-brand-600 font-medium hover:text-brand-800 transition-colors">
                             Explore Service <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
@@ -282,7 +162,7 @@
                     <div class="p-8 flex-1 flex flex-col">
                         <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-600 transition-colors">IT Outsourcing & Helpdesk Services</h4>
                         <p class="text-gray-600 text-sm leading-relaxed mb-6">End-to-end IT outsourcing, including helpdesk operations, system monitoring, and continuous technical support.</p>
-                        <a href="#" class="mt-auto inline-flex items-center text-brand-600 font-medium hover:text-brand-800 transition-colors">
+                        <a href="#contact" class="mt-auto inline-flex items-center text-brand-600 font-medium hover:text-brand-800 transition-colors">
                             Explore Service <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
@@ -300,7 +180,7 @@
                     <div class="p-8 flex-1 flex flex-col">
                         <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-600 transition-colors">IT Equipment Sales</h4>
                         <p class="text-gray-600 text-sm leading-relaxed mb-6">Supply of branded desktops, laptops, printers, copiers, UPS systems, and enterprise-grade IT accessories.</p>
-                        <a href="#" class="mt-auto inline-flex items-center text-brand-600 font-medium hover:text-brand-800 transition-colors">
+                        <a href="#contact" class="mt-auto inline-flex items-center text-brand-600 font-medium hover:text-brand-800 transition-colors">
                             Explore Service <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
@@ -318,7 +198,7 @@
                     <div class="p-8 flex-1 flex flex-col">
                         <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-600 transition-colors">IT Equipment Rental Services</h4>
                         <p class="text-gray-600 text-sm leading-relaxed mb-6">Flexible short-term and long-term rental solutions for PCs, laptops, printers, copiers, UPS systems, and event-based requirements.</p>
-                        <a href="#" class="mt-auto inline-flex items-center text-brand-600 font-medium hover:text-brand-800 transition-colors">
+                        <a href="#contact" class="mt-auto inline-flex items-center text-brand-600 font-medium hover:text-brand-800 transition-colors">
                             Explore Service <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
@@ -336,7 +216,7 @@
                     <div class="p-8 flex-1 flex flex-col">
                         <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-600 transition-colors">Repairs, Maintenance & AMC Services</h4>
                         <p class="text-gray-600 text-sm leading-relaxed mb-6">Preventive and corrective maintenance through Annual Maintenance Contracts to ensure system reliability and minimal downtime.</p>
-                        <a href="#" class="mt-auto inline-flex items-center text-brand-600 font-medium hover:text-brand-800 transition-colors">
+                        <a href="#contact" class="mt-auto inline-flex items-center text-brand-600 font-medium hover:text-brand-800 transition-colors">
                             Explore Service <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
@@ -354,7 +234,7 @@
                     <div class="p-8 flex-1 flex flex-col">
                         <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-600 transition-colors">Network, CCTV & Security Solutions</h4>
                         <p class="text-gray-600 text-sm leading-relaxed mb-6">Design and implementation of secure networking, structured cabling, CCTV surveillance, and access control systems.</p>
-                        <a href="#" class="mt-auto inline-flex items-center text-brand-600 font-medium hover:text-brand-800 transition-colors">
+                        <a href="#contact" class="mt-auto inline-flex items-center text-brand-600 font-medium hover:text-brand-800 transition-colors">
                             Explore Service <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
@@ -363,237 +243,516 @@
         </div>
     </section>
 
-    <!-- Why Choose Us / Stats -->
-    <section id="why-us" class="py-20 bg-brand-900 text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
-        <div class="absolute inset-0 bg-brand-900/90 mix-blend-multiply"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+<!-- Why Choose Us -->
+    <section class="py-24 bg-brand-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold mb-6">Why InfoTech is the Right Choice</h3>
+                <p class="text-brand-100 text-lg max-w-2xl mx-auto">We back every project with industry expertise and our absolute commitment to client success.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8 text-center">
                 <div>
-                    <h2 class="text-brand-400 font-bold tracking-wider uppercase text-sm mb-3">Why InfoTech</h2>
-                    <h3 class="text-3xl md:text-5xl font-bold mb-6">Excellence in Every Connection</h3>
-                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-                        We don't just fix computers; we engineer environments where technology drives business success. Our commitment to quality, reliability, and innovation sets us apart.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-brand-800 text-brand-400 flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-bold text-lg mb-1">24/7 Support</h5>
-                                <p class="text-sm text-gray-400">Round-the-clock monitoring and assistance.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-brand-800 text-brand-400 flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="fas fa-user-shield"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-bold text-lg mb-1">Expert Team</h5>
-                                <p class="text-sm text-gray-400">Certified engineers with years of experience.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-brand-800 text-brand-400 flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-bold text-lg mb-1">Tailored Solutions</h5>
-                                <p class="text-sm text-gray-400">Custom setups to match your operational needs.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-brand-800 text-brand-400 flex items-center justify-center flex-shrink-0 mt-1">
-                                <i class="fas fa-tag"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-bold text-lg mb-1">Cost Effective</h5>
-                                <p class="text-sm text-gray-400">Optimized budgets without compromising quality.</p>
-                            </div>
-                        </div>
+                    <i class="fas fa-users text-5xl text-brand-500 mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">Experienced Team</h4>
+                    <p class="text-sm text-gray-400">Certified engineers and specialized developers at your service.</p>
+                </div>
+                <div>
+                    <i class="fas fa-bolt text-5xl text-brand-500 mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">Fast Delivery</h4>
+                    <p class="text-sm text-gray-400">Strict adherence to project timelines and milestones.</p>
+                </div>
+                <div>
+                    <i class="fas fa-tags text-5xl text-brand-500 mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">Affordable Pricing</h4>
+                    <p class="text-sm text-gray-400">Premium corporate solutions structured for your budget.</p>
+                </div>
+                <div>
+                    <i class="fas fa-heart text-5xl text-brand-500 mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">Customer Satisfaction</h4>
+                    <p class="text-sm text-gray-400">Dedicated helpdesk and lasting after-sales support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-6">What Our Clients Say</h3>
+                <p class="text-gray-600 text-lg">Trusted by Sri Lanka's leading enterprises for technical excellence.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 relative">
+                    <div class="text-brand-500 mb-4 flex gap-1">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"InfoTech has completely transformed our corporate IT infrastructure. Their rapid response and software quality are unmatched."</p>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-gray-900">Saman Kumara</span>
+                        <span class="text-sm text-brand-600">Operations Director, MAS</span>
+                    </div>
+                    <i class="fas fa-quote-right absolute top-8 right-8 text-6xl text-gray-50 opacity-50 -z-0"></i>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 relative">
+                    <div class="text-brand-500 mb-4 flex gap-1">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"The web development team delivered a perfect corporate portal well ahead of schedule. Highly recommended."</p>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-gray-900">Nipuni Perera</span>
+                        <span class="text-sm text-brand-600">Marketing Head, People's Bank</span>
+                    </div>
+                    <i class="fas fa-quote-right absolute top-8 right-8 text-6xl text-gray-50 opacity-50 -z-0"></i>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 relative">
+                    <div class="text-brand-500 mb-4 flex gap-1">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"Excellent continuous support. Their hardware and network team provides 24/7 reliability for our distribution centers."</p>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-gray-900">Dinesh Roshan</span>
+                        <span class="text-sm text-brand-600">IT Manager, CBL Group</span>
+                    </div>
+                    <i class="fas fa-quote-right absolute top-8 right-8 text-6xl text-gray-50 opacity-50 -z-0"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+                <!-- Clients Section -->
+    <section id="clients" class="py-20 bg-white border-y border-gray-100 overflow-hidden text-center relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <h2 class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-2">Our Clients</h2>
+            <h3 class="text-3xl font-bold text-gray-900">Trusted by leading organizations</h3>
+        </div>
+        
+        <div class="w-full relative [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+            <div class="flex items-center animate-carousel hover:[animation-play-state:paused] w-max">
+                <div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_1.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_3.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_5.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_7.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_9.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_11.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_13.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_15.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_17.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_19.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_21.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_23.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_25.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_27.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_29.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_31.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_33.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_35.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_37.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_39.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_41.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_43.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_45.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_47.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_49.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_51.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_53.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_55.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_57.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_1.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_3.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_5.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_7.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_9.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_11.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_13.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_15.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_17.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_19.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_21.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_23.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_25.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_27.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_29.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_31.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_33.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_35.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_37.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_39.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_41.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_43.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_45.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_47.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_49.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_51.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_53.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_55.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_57.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_1.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_3.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_5.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_7.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_9.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_11.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_13.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_15.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_17.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_19.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_21.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_23.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_25.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_27.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_29.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_31.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_33.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_35.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_37.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_39.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_41.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_43.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_45.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_47.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_49.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_51.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_53.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_55.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_57.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_1.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_3.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_5.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_7.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_9.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_11.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_13.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_15.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_17.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_19.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_21.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_23.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_25.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_27.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_29.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_31.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_33.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_35.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_37.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_39.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_41.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_43.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_45.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_47.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_49.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_51.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_53.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_55.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_57.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_1.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_3.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_5.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_7.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_9.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_11.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_13.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_15.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_17.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_19.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_21.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_23.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_25.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_27.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_29.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_31.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_33.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_35.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_37.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_39.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_41.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_43.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_45.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_47.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_49.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_51.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_53.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_55.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_57.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_1.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_3.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_5.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_7.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_9.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_11.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_13.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_15.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_17.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_19.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_21.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_23.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_25.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_27.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_29.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_31.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_33.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_35.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_37.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_39.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_41.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_43.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_45.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_47.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_49.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_51.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_53.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_55.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_57.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+
+            </div>
+            
+            <div class="flex items-center animate-carousel pt-8 hover:[animation-play-state:paused] w-max ml-20" style="animation-direction: reverse;">
+                <div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_2.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_4.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_6.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_8.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_10.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_12.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_14.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_16.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_18.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_20.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_22.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_24.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_26.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_28.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_30.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_32.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_34.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_36.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_38.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_40.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_42.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_44.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_46.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_48.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_50.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_52.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_54.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_56.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_2.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_4.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_6.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_8.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_10.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_12.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_14.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_16.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_18.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_20.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_22.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_24.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_26.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_28.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_30.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_32.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_34.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_36.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_38.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_40.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_42.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_44.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_46.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_48.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_50.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_52.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_54.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_56.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_2.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_4.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_6.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_8.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_10.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_12.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_14.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_16.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_18.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_20.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_22.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_24.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_26.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_28.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_30.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_32.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_34.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_36.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_38.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_40.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_42.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_44.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_46.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_48.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_50.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_52.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_54.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_56.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_2.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_4.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_6.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_8.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_10.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_12.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_14.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_16.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_18.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_20.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_22.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_24.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_26.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_28.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_30.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_32.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_34.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_36.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_38.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_40.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_42.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_44.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_46.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_48.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_50.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_52.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_54.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_56.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_2.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_4.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_6.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_8.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_10.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_12.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_14.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_16.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_18.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_20.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_22.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_24.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_26.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_28.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_30.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_32.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_34.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_36.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_38.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_40.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_42.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_44.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_46.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_48.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_50.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_52.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_54.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_56.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_2.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_4.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_6.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_8.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_10.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_12.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_14.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_16.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_18.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_20.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_22.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_24.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_26.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_28.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_30.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_32.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_34.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_36.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_38.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_40.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_42.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_44.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_46.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_48.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_50.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_52.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_54.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+<div class="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center cursor-pointer group h-24 transition-transform duration-300 hover:scale-110"><img src="assets/clients/optimized_logos/logo_56.png" alt="Trusted Client" class="h-12 md:h-16 lg:h-[70px] w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 drop-shadow-sm"></div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- CTA -->
+    <section class="py-20 bg-brand-600 relative overflow-hidden text-center">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')]"></div>
+        <div class="max-w-3xl mx-auto px-4 relative z-10">
+            <h3 class="text-4xl md:text-5xl font-bold text-white mb-8">Ready to grow your business?</h3>
+            <a href="#contact" class="inline-flex px-10 py-5 bg-white text-brand-900 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-2xl hover:-translate-y-1">
+                Contact Us Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white pt-20 pb-10 border-t-4 border-brand-500 uppercase tracking-wide">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 normal-case tracking-normal">
+                <div>
+                    <img src="assets/logo.png" alt="InfoTech Logo" class="h-14 bg-white p-2 rounded-lg mb-6 w-auto">
+                    <p class="text-gray-400 mb-6">The trusted technology partner for modern corporations. Securing and optimizing your IT infrastructure with comprehensive digital solutions.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-500 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-500 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-500 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-brand-800/50 backdrop-blur-sm border border-brand-700/50 p-8 rounded-2xl text-center transform translate-y-8">
-                        <div class="text-4xl font-bold text-brand-400 mb-2 counter" data-target="15">0</div>
-                        <div class="text-sm text-gray-300 uppercase tracking-widest font-medium">Years Active</div>
-                    </div>
-                    <div class="bg-brand-800/50 backdrop-blur-sm border border-brand-700/50 p-8 rounded-2xl text-center">
-                        <div class="text-4xl font-bold text-brand-400 mb-2 counter" data-target="500">0</div><span class="text-4xl font-bold text-brand-400">+</span>
-                        <div class="text-sm text-gray-300 uppercase tracking-widest font-medium">Corporate Clients</div>
-                    </div>
-                    <div class="bg-brand-800/50 backdrop-blur-sm border border-brand-700/50 p-8 rounded-2xl text-center transform translate-y-8">
-                        <div class="text-4xl font-bold text-brand-400 mb-2 counter" data-target="99">0</div><span class="text-4xl font-bold text-brand-400">%</span>
-                        <div class="text-sm text-gray-300 uppercase tracking-widest font-medium">Uptime Guarantee</div>
-                    </div>
-                    <div class="bg-brand-800/50 backdrop-blur-sm border border-brand-700/50 p-8 rounded-2xl text-center">
-                        <div class="text-4xl font-bold text-brand-400 mb-2 counter" data-target="24">0</div><span class="text-4xl font-bold text-brand-400">/7</span>
-                        <div class="text-sm text-gray-300 uppercase tracking-widest font-medium">Support Ready</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dedicated Clients Showcase -->
-    <section id="clients" class="py-24 bg-white border-y border-gray-100 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-50 rounded-bl-full -z-10 opacity-30"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-50 rounded-tr-full -z-10 opacity-30"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center relative z-10">
-            <h2 class="text-brand-600 font-bold tracking-wider uppercase text-sm mb-3">Who Trusts Us</h2>
-            <h3 class="text-3xl md:text-5xl font-bold text-gray-900">Our Prestigious Clientele</h3>
-        </div>
-        
-        <div class="w-full inline-flex flex-col gap-6 overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] relative z-10">
-            <!-- First Row (moving left) -->
-            <div class="flex items-center justify-center gap-6 [&>span]:w-max animate-marquee">
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">People's Bank</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Ministry of Health</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">MAS Holdings</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Ceylon Biscuits Limited</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">JAT Holdings</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Elections Commission</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">AIA Insurance</span>
-                <!-- duplicate for loop -->
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">People's Bank</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Ministry of Health</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">MAS Holdings</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Ceylon Biscuits Limited</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">JAT Holdings</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Elections Commission</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">AIA Insurance</span>
-            </div>
-            <!-- Second Row -->
-            <div class="flex items-center justify-center gap-6 [&>span]:w-max animate-marquee ml-32">
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Access Engineering</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Galle Face Hotel</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Maliban</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Godrej</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Softlogic</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Lion Brewery</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Pizza Hut & Taco Bell</span>
-                <!-- duplicate for loop -->
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Access Engineering</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Galle Face Hotel</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Maliban</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Godrej</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Softlogic</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Lion Brewery</span>
-                <span class="px-8 py-6 bg-white border border-gray-100 rounded-xl shadow-md shadow-brand-900/5 font-bold text-gray-700 hover:text-brand-600 text-lg hover:border-brand-300 hover:shadow-lg transition-all min-w-[220px] text-center">Pizza Hut & Taco Bell</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Support CTA -->
-    <section class="py-16 bg-brand-600 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div class="text-white md:w-2/3">
-                <h3 class="text-2xl md:text-3xl font-bold mb-2">Experiencing technical difficulties?</h3>
-                <p class="text-brand-100 text-lg">Our immediate response team is ready to assist you right now.</p>
-            </div>
-            <div class="flex gap-4 w-full md:w-auto">
-                <a href="tel:+94112345678" class="flex-1 md:flex-none px-8 py-4 bg-white text-brand-600 rounded-xl font-bold text-center hover:bg-gray-50 transition-colors shadow-lg shadow-black/10 flex items-center justify-center gap-3">
-                    <i class="fas fa-phone-alt"></i> Call Support
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Footer Area -->
-    <footer id="contact" class="bg-gray-900 border-t-4 border-brand-500 pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-                <!-- Brand Info -->
-                <div class="col-span-1">
-                    <a href="index.html" class="inline-block mb-6">
-                        <img src="assets/logo.png" alt="InfoTech Computers Logo" class="h-16 w-auto bg-white p-2 rounded-xl border border-gray-700 shadow-md">
-                    </a>
-                    <p class="text-gray-400 mb-6 leading-relaxed relative z-10">
-                        The trusted technology partner for modern corporations. Securing and optimizing your IT infrastructure.
-                    </p>
-                    <div class="text-sm text-gray-400 space-y-3 mb-6 relative z-10">
-                        <p class="font-bold text-white mb-2 text-base">Head Office</p>
-                        <p class="flex items-start gap-2"><i class="fas fa-map-marker-alt text-brand-500 mt-1"></i> <span>No. 801, 4th Floor, Sausiri Shopping Complex, High Level Road, Nugegoda.</span></p>
-                        <p class="flex items-center gap-2"><i class="fas fa-phone text-brand-500"></i> +94 11 219 9446</p>
-                    </div>
-                </div>
-
-                <!-- Key Contacts -->
-                <div class="col-span-1 lg:col-span-2 relative z-10">
-                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Company Directory</h4>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <!-- Sales -->
-                        <div class="bg-gray-800/80 p-5 rounded-xl border border-gray-700/50 hover:border-brand-500/50 transition-colors shadow-lg">
-                            <h5 class="text-brand-400 font-bold mb-1">Sales Inquiries</h5>
-                            <p class="text-white font-medium text-sm">Prageesha Fonseka</p>
-                            <p class="text-gray-400 text-xs mb-3 italic">(Executive - Customer Relations)</p>
-                            <a href="mailto:sales@itclk.com" class="block text-gray-300 hover:text-white text-sm mb-1"><i class="fas fa-envelope text-brand-500 w-5"></i> sales@itclk.com</a>
-                            <a href="tel:+94760954599" class="block text-gray-300 hover:text-white text-sm"><i class="fas fa-mobile-alt text-brand-500 w-5"></i> +94 76 095 4599</a>
-                        </div>
-                        <!-- Operations -->
-                        <div class="bg-gray-800/80 p-5 rounded-xl border border-gray-700/50 hover:border-brand-500/50 transition-colors shadow-lg">
-                            <h5 class="text-brand-400 font-bold mb-1">Operational Inquiries</h5>
-                            <p class="text-white font-medium text-sm">Lithira Warnakulasooriya</p>
-                            <p class="text-gray-400 text-xs mb-3 italic">(Manager - Operations)</p>
-                            <a href="mailto:operations@itclk.com" class="block text-gray-300 hover:text-white text-sm mb-1"><i class="fas fa-envelope text-brand-500 w-5"></i> operations@itclk.com</a>
-                            <a href="tel:+94760954597" class="block text-gray-300 hover:text-white text-sm"><i class="fas fa-mobile-alt text-brand-500 w-5"></i> +94 76 095 4597</a>
-                        </div>
-                        <!-- Technical -->
-                        <div class="bg-gray-800/80 p-5 rounded-xl border border-gray-700/50 hover:border-brand-500/50 transition-colors shadow-lg">
-                            <h5 class="text-brand-400 font-bold mb-1">Technical Inquiries</h5>
-                            <p class="text-white font-medium text-sm">Yenuka Madhumalka</p>
-                            <p class="text-gray-400 text-xs mb-3 italic">(Lead - Projects)</p>
-                            <a href="mailto:support@itclk.com" class="block text-gray-300 hover:text-white text-sm mb-1"><i class="fas fa-envelope text-brand-500 w-5"></i> support@itclk.com</a>
-                            <a href="tel:+94760954595" class="block text-gray-300 hover:text-white text-sm"><i class="fas fa-mobile-alt text-brand-500 w-5"></i> +94 76 095 4595</a>
-                        </div>
-                        <!-- Executive -->
-                        <div class="bg-gray-800/80 p-5 rounded-xl border border-gray-700/50 hover:border-brand-500/50 transition-colors shadow-lg">
-                            <h5 class="text-brand-400 font-bold mb-1">Executive Leadership</h5>
-                            <p class="text-white font-medium text-sm">Sachith Kudavidanage</p>
-                            <p class="text-gray-400 text-xs mb-3 italic">(Director / CEO)</p>
-                            <a href="mailto:info@itclk.com" class="block text-gray-300 hover:text-white text-sm mb-1"><i class="fas fa-envelope text-brand-500 w-5"></i> info@itclk.com</a>
-                            <a href="tel:+94777909100" class="block text-gray-300 hover:text-white text-sm"><i class="fas fa-mobile-alt text-brand-500 w-5"></i> +94 777 909 100</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Connect / Socials -->
-                <div class="col-span-1 relative z-10">
-                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Services</h4>
-                    <ul class="space-y-3 mb-8">
-                        <li><a href="#" class="text-gray-400 hover:text-brand-400 transition-colors text-sm inline-flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> IT Support</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-brand-400 transition-colors text-sm inline-flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Networking Solutions</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-brand-400 transition-colors text-sm inline-flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Server Maintenance</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-brand-400 transition-colors text-sm inline-flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> CCTV Installations</a></li>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#home" class="hover:text-brand-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-brand-400 transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-brand-400 transition-colors">Our Services</a></li>
+                        <li><a href="#clients" class="hover:text-brand-400 transition-colors">Clients</a></li>
                     </ul>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-600 hover:text-white transition-all">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-600 hover:text-white transition-all">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-600 hover:text-white transition-all">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6 uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Software Development</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Web & App Design</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Hardware & Networking</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Social Media Management</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Accounting & Legal IT</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6 uppercase tracking-wider">Contact Info</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-brand-500 mt-1"></i> 
+                            <span>No. 801, 4th Floor, Sausiri Shopping Complex, High Level Road, Nugegoda</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-brand-500"></i> +94 11 219 9446
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-brand-500"></i> info@infotechcomputers.lk
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="border-t border-gray-800 pt-8 flex justify-center items-center">
-                <p class="text-gray-500 text-sm">
-                    &copy; 2026 InfoTech Computers (Pvt) Ltd. All rights reserved.
-                </p>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm normal-case tracking-normal">
+                <p>&copy; 2026 InfoTech Computers (Pvt) Ltd. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="script.js"></script>
 </body>
 </html>
